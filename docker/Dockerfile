@@ -24,7 +24,7 @@ ENV PATH /opt/venv/bin:$PATH
 ADD docker/etc/pip.conf /etc/pip.conf 
 
 RUN pip install --upgrade pip
-RUN pip install flit
+RUN pip install flit pre-commit
 
 
 

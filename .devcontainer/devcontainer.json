@@ -7,9 +7,9 @@
     "name": "${localWorkspaceFolderBasename}_devcontainer",
     "mounts": [
         // shell
-        "src=/home/mbeszedes/.zsh_history,dst=/root/.zsh_history,type=bind,consistency=cached",
-        "src=/home/mbeszedes/.zshrc,dst=/root/.zshrc,type=bind,consistency=cached",
-        "src=/home/mbeszedes/.oh-my-zsh,dst=/root/.oh-my-zsh,type=bind,consistency=cached"
+        "src=${localEnv:HOME}${localEnv:USERPROFILE}/.zsh_history,dst=/root/.zsh_history,type=bind,consistency=cached",
+        "src=${localEnv:HOME}${localEnv:USERPROFILE}/.zshrc,dst=/root/.zshrc,type=bind,consistency=cached",
+        "src=${localEnv:HOME}${localEnv:USERPROFILE}/.oh-my-zsh,dst=/root/.oh-my-zsh,type=bind,consistency=cached"
     ],
     "workspaceMount": "source=${localWorkspaceFolder},target=/workspaces/${localWorkspaceFolderBasename},type=bind,consistency=delegated",
     "workspaceFolder": "/workspaces/${localWorkspaceFolderBasename}",
