@@ -1,0 +1,20 @@
+{
+    "python.defaultInterpreterPath": "/opt/venv/bin/python",
+    "diffEditor.ignoreTrimWhitespace": true,
+    "search.exclude": {
+        "**/.git": true,
+    },
+
+    "workbench.colorCustomizations": {       // Can customize each aspect
+        "[One Dark Pro]": {                  // Optional
+            "tab.activeBorderTop": "#0A84FF" // Active Tab Top Highlighting
+        }
+    },
+    "python.testing.pytestArgs": [
+        "tests"
+    ],
+    "python.testing.unittestEnabled": false,
+    "python.testing.pytestEnabled": true,
+
+
+}

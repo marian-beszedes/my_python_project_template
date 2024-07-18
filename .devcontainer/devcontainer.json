@@ -1,0 +1,44 @@
+{
+    // user specific parts:
+    // - shell mounts - this mounts are compatible with zsh
+    // - workspaceMount - make sure the path is correct
+    // - workspaceFolder - make sure the path si correct
+    // - extensions - replace with extensions u want
+    "name": "${localWorkspaceFolderBasename}_devcontainer",
+    "mounts": [
+        // shell
+        "src=/home/mbeszedes/.zsh_history,dst=/root/.zsh_history,type=bind,consistency=cached",
+        "src=/home/mbeszedes/.zshrc,dst=/root/.zshrc,type=bind,consistency=cached",
+        "src=/home/mbeszedes/.oh-my-zsh,dst=/root/.oh-my-zsh,type=bind,consistency=cached"
+    ],
+    "workspaceMount": "source=${localWorkspaceFolder},target=/workspaces/${localWorkspaceFolderBasename},type=bind,consistency=delegated",
+    "workspaceFolder": "/workspaces/${localWorkspaceFolderBasename}",
+    "image": "${localWorkspaceFolderBasename}",
+    "userEnvProbe": "loginInteractiveShell",
+    "runArgs": [
+        "--name",
+        "${localWorkspaceFolderBasename}_devcontainer",
+    ],
+    "shutdownAction": "none",
+    "initializeCommand": "IMAGE_TAG=${localWorkspaceFolderBasename} bash docker/build.sh",
+    "onCreateCommand": "bash -i .devcontainer/on-create-command.sh",
+    "postCreateCommand": "bash -i .devcontainer/post-create-command.sh",
+
+    "customizations": {
+        "vscode": {
+            "extensions": [
+                "ms-python.python",
+                "ms-python.vscode-pylance",
+                "charliermarsh.ruff",
+                "christian-kohler.path-intellisense",
+                "bungcip.better-toml",
+                "ms-toolsai.jupyter",
+                "github.copilot",
+                "github.copilot-chat"
+            ],
+            "settings": {
+                "terminal.integrated.defaultProfile.linux": "zsh"
+            }
+        }
+    } 
+}
