@@ -10,3 +10,4 @@ If you want to run tests manually then run :
 
 Connfiguration for VsCode ruff and pre-commit ruff is in `pyproject.toml`
 
+
