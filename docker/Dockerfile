@@ -26,5 +26,3 @@ ADD docker/etc/pip.conf /etc/pip.conf
 RUN pip install --upgrade pip
 RUN pip install flit pre-commit
 
-
-

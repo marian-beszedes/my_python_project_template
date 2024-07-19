@@ -1,4 +1,4 @@
 #!/usr/bin/env bash
 
-# pip install --upgrade ipython jupyterlab jupyter notebook
-# pre-commit install
+FLIT_ROOT_INSTALL=1 flit install --symlink
+pre-commit install

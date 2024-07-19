@@ -1,5 +1,7 @@
-from python_package import my_math
+from typing import Union
+
 import pytest
+from python_package import my_math
 
 
 @pytest.mark.parametrize(
@@ -13,5 +15,5 @@ import pytest
         (1e10, 1e10, 2e10),
     ],
 )
-def test_add(a, b, expected):
+def test_add(a: Union[int, float], b: Union[int, float], expected: Union[int, float]) -> None:
     assert my_math.add(a, b) == expected
